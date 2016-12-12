@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>913</width>
+    <width>768</width>
     <height>652</height>
    </rect>
   </property>
@@ -17,10 +17,10 @@
    <widget class="QLineEdit" name="search_box">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>501</width>
-      <height>21</height>
+      <x>490</x>
+      <y>10</y>
+      <width>261</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -63,7 +63,7 @@
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>851</width>
+      <width>731</width>
       <height>381</height>
      </rect>
     </property>
@@ -72,6 +72,9 @@
     </property>
     <property name="selectionBehavior">
      <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
     </property>
     <property name="sortingEnabled">
      <bool>true</bool>
@@ -122,6 +125,29 @@
       <string>Year Deceased</string>
      </property>
     </column>
+   </widget>
+   <widget class="QPushButton" name="button_add_scientist">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>440</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="dropdown_what_to_look_at">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>13</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QToolBar" name="mainToolBar">

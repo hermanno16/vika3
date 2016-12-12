@@ -26,9 +26,7 @@ public:
     vector<Scientist> getAllScientistsByYearOfBirthDes();
     vector<Scientist> getAllDeadOrAliveScientistsAtoZ(char input);
     //Scientist - search functions.
-    vector<Scientist> searchForScientistsByName(string searchString);
-    vector<Scientist> searchForScientistsByYearOfBirthAtoZ(string yearToFind);
-    vector<Scientist> searchForScientistsByYearOfDeathAtoZ(string yearToFind);
+    vector<Scientist> searchForScientists(string searchString);
     vector<Scientist> getScientistsByGenderAtoZ(char gender);
     vector<Scientist> getAllDeceasedScientistsAtoZ();
     string getScientistName(int idNumber);

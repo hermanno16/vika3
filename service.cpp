@@ -72,30 +72,15 @@ vector<Scientist> Service::getAllDeceasedScientistsAtoZ()
     return allScientists;
 }
 //Scientist - search functions.
-vector<Scientist> Service::searchForScientistsByName(string searchString)
+vector<Scientist> Service::searchForScientists(string searchString)
 {
     vector<Scientist> allScientists;
 
-    allScientists = _dAccess.searchForScientistsByName(searchString);
+    allScientists = _dAccess.searchForScientists(searchString);
 
     return allScientists;
 }
-vector<Scientist> Service::searchForScientistsByYearOfBirthAtoZ(string yearToFind)
-{
-    vector<Scientist> allScientists;
 
-    allScientists = _dAccess.searchForScientistsByYearOfBirthAtoZ(yearToFind);
-
-    return allScientists;
-}
-vector<Scientist> Service::searchForScientistsByYearOfDeathAtoZ(string yearToFind)
-{
-    vector<Scientist> allScientists;
-
-    allScientists = _dAccess.searchForScientistsByYearOfDeathAtoZ(yearToFind);
-
-    return allScientists;
-}
 vector<Scientist> Service::getScientistsByGenderAtoZ(char gender)
 {
     vector<Scientist> genderScientists;
@@ -468,38 +453,3 @@ bool Service::isAddComputerValid(string name, string yearBuilt, string type, str
 
 }
 
-//--Operators overload--//
-ostream& operator <<(ostream& os , Scientist& TempClass)    // Operator Overloader fyrir cout << Scientist.
-{
-    if(TempClass.getYearOfDeath()==0)
-    {
-        os << " | ";os.width(5); os << left << TempClass.getID();
-        os.width(30); os << left << TempClass.getName();
-        os << "  " ;os.width(13); os << left << TempClass.getGender();
-        os << "  " ;os.width(15); os << left << TempClass.getYearOfBirth();
-        os << "  " ;os.width(17); os << left << "N/A" << "|";
-        os << endl;
-    }
-    else
-    {
-        os << " | ";os.width(5); os << left << TempClass.getID();
-        os.width(30); os << left << TempClass.getName();
-        os << "  " ;os.width(13); os << left << TempClass.getGender();
-        os << "  " ;os.width(15); os << left << TempClass.getYearOfBirth();
-        os << "  " ;os.width(17); os << left << TempClass.getYearOfDeath() << "|";
-        os << endl;
-    }
-
-    return os;
-}
-ostream& operator <<(ostream& os, Computer& TempClass)    // Operator Overloader fyrir cout << Computer.
-{
-    os << " | ";os.width(5); os << left << TempClass.getId();
-    os.width(24); os << left << TempClass.getName();
-    os << "  " ;os.width(21); os << left << TempClass.getType();
-    os << "  " ;os.width(13); os << left << TempClass.getYearBuilt();
-    os << "  " ;os.width(17); os << left << TempClass.getDevelopment() << "|";
-    os << endl;
-
-    return os;
-}

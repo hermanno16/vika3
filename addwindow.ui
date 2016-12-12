@@ -13,12 +13,12 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>220</x>
      <y>10</y>
-     <width>81</width>
+     <width>89</width>
      <height>161</height>
     </rect>
    </property>
@@ -73,7 +73,7 @@
     <string>Gender :</string>
    </property>
   </widget>
-  <widget class="QFrame" name="frame">
+  <widget class="QFrame" name="photo_frame">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -89,7 +89,7 @@
     <enum>QFrame::Raised</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="addPhotoButton">
+  <widget class="QPushButton" name="add_Photo_Button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -102,7 +102,7 @@
     <string>Add Photo</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="submitButton">
+  <widget class="QPushButton" name="submit_Button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -115,7 +115,7 @@
     <string>Submit</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="cancelButton">
+  <widget class="QPushButton" name="cancel_Button">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -128,7 +128,7 @@
     <string>Cancel</string>
    </property>
   </widget>
-  <widget class="QTextEdit" name="infoInputBox">
+  <widget class="QTextEdit" name="info_Input_Box">
    <property name="geometry">
     <rect>
      <x>270</x>
@@ -151,7 +151,7 @@
     <string>Info:</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>300</x>
@@ -162,41 +162,41 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="FirstNameInputBox"/>
+     <widget class="QLineEdit" name="First_Name_InputBox"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="lastNameInputBox"/>
+     <widget class="QLineEdit" name="last_Name_InputBox"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="yearBirthInputBox"/>
+     <widget class="QLineEdit" name="year_Birth_Input_Box"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="yearDeathInputBox"/>
+     <widget class="QLineEdit" name="year_Death_Input_Box"/>
     </item>
     <item>
-     <widget class="QLineEdit" name="WikiInputBox"/>
+     <widget class="QLineEdit" name="Wiki_Input_Box"/>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>310</x>
      <y>180</y>
-     <width>114</width>
-     <height>21</height>
+     <width>136</width>
+     <height>24</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QRadioButton" name="radioFemale">
+     <widget class="QRadioButton" name="radio_Female">
       <property name="text">
        <string>Female</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioMale">
+     <widget class="QRadioButton" name="radio_Male">
       <property name="text">
        <string>Male</string>
       </property>
@@ -208,7 +208,7 @@
  <resources/>
  <connections>
   <connection>
-   <sender>cancelButton</sender>
+   <sender>cancel_Button</sender>
    <signal>clicked()</signal>
    <receiver>Form</receiver>
    <slot>close()</slot>

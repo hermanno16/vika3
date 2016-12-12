@@ -2,7 +2,7 @@
 using namespace std;
 
 //--Constructors--//
-Scientist::Scientist(int ID, string name, string gender, int yearOfBirth, int yearOfDeath)
+Scientist::Scientist(int ID, string name, string gender, int yearOfBirth, string yearOfDeath)
 {
     _id = ID;
     _name = name;
@@ -27,7 +27,7 @@ int Scientist::getYearOfBirth() const
 {
     return _yearOfBirth;
 }
-int Scientist::getYearOfDeath() const
+string Scientist::getYearOfDeath() const
 {
     return _yearOfDeath;
 }
@@ -48,7 +48,7 @@ void Scientist::setYearOfBirth(int yearOfBirth)
 {
     _yearOfBirth = yearOfBirth;
 }
-void Scientist::setYearOfDeath(int yearOfDeath)
+void Scientist::setYearOfDeath(string yearOfDeath)
 {
     _yearOfDeath = yearOfDeath;
 }
