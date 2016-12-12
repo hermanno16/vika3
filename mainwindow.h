@@ -20,7 +20,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_search_box_textChanged(const QString &arg1);
+    void on_search_box_textChanged();
 
 private:
 

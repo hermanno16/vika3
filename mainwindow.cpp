@@ -28,20 +28,37 @@ void MainWindow::displayAllScientists()
 
 void MainWindow::displayScientists(vector<Scientist> scientists)
 {
-    ui->list_scientists->clear();
+    ui->scientist_table->clearContents();
+    ui->scientist_table->setRowCount(scientists.size());
+    ui->scientist_table->setColumnHidden(0, true);
 
-    for(unsigned int i = 0; i < scientists.size(); i++)
+
+
+    for(unsigned int row = 0; row < scientists.size(); row++)
     {
-        Scientist currentScientist = scientists[i];
+        Scientist currentScientist = scientists[row];
 
-        ui->list_scientists->addItem(QString::fromStdString(currentScientist.getName()));
+        QString id = QString::number(currentScientist.getID());
+        QString name = QString::fromStdString(currentScientist.getName());
+        QString gender = QString::fromStdString(currentScientist.getGender());
+        QString yearofbirth = QString::number(currentScientist.getYearOfBirth());
+        QString yearofdeath = QString::number(currentScientist.getYearOfDeath());
 
 
+        if(yearofdeath == "0")
+        {
+            yearofdeath = "N/A";
+        }
+
+        ui->scientist_table->setItem(row, 0, new QTableWidgetItem(id));
+        ui->scientist_table->setItem(row, 1, new QTableWidgetItem(name));
+        ui->scientist_table->setItem(row, 2, new QTableWidgetItem(gender));
+        ui->scientist_table->setItem(row, 3, new QTableWidgetItem(yearofbirth));
+        ui->scientist_table->setItem(row, 4, new QTableWidgetItem(yearofdeath));
     }
-
 }
 
-void MainWindow::on_search_box_textChanged(const QString &arg1)
+void MainWindow::on_search_box_textChanged()
 {
     string userInput = ui->search_box->text().toStdString();
 
