@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <string>
 #include <QString>
+#include "addscientistdialog.h"
 
 using namespace std;
 
@@ -69,18 +70,17 @@ void MainWindow::on_search_box_textChanged()
 
 void MainWindow::on_pushButton_clicked()
 {
-
-
-
-
-
+    /*
+    AddScientistDialog addStudentDialog;
+    addStudentDialog.exec();
+    */
 }
 
 void MainWindow::on_button_add_scientist_clicked()
 {
-   AddScientistwindow addScientistwindow;
+   AddScientistDialog addScientistDialog;
 
-   addScientistwindow.exec();
+   int addScientistReturnValue = addScientistDialog.exec();
 }
 
 void MainWindow::on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1)
