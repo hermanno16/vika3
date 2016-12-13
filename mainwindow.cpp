@@ -4,6 +4,7 @@
 #include <QString>
 #include "addscientistdialog.h"
 #include "scientistinfodialog.h"
+#include "addcomputerdialog.h"
 
 using namespace std;
 
@@ -15,9 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     displayAllScientists();
-
-    ui->dropdown_what_to_look_at->addItem(" Scientists");
-    ui->dropdown_what_to_look_at->addItem(" Computers");
+    displayAllComputers();
 }
 
 MainWindow::~MainWindow()
@@ -84,7 +83,7 @@ void MainWindow::on_button_add_scientist_clicked()
 {
    AddScientistDialog addScientistDialog;
 
-   int addScientistReturnValue = addScientistDialog.exec();
+   addScientistDialog.exec();
 }
 void MainWindow::on_button_scientist_info_clicked()
 {
@@ -92,9 +91,61 @@ void MainWindow::on_button_scientist_info_clicked()
 
     scientistInfoDialog.exec();
 }
+void MainWindow::displayAllComputers()
+{
+    vector<Computer> computers = _service.getAllComputersAtoZ();
+    displayComputers(computers);
+}
+void MainWindow::displayComputers(vector<Computer> computers)
+{
+    ui->computer_table->clearContents();
+    ui->computer_table->setRowCount(computers.size());
+    ui->computer_table->setColumnHidden(0, true);
+    ui->computer_table->setColumnCount(5);
+    ui->computer_table->setColumnWidth(1, this->width()/3);
+    ui->computer_table->setColumnWidth(2, this->width()/6);
+    ui->computer_table->setColumnWidth(3, this->width()/6);
+    ui->computer_table->setColumnWidth(4, this->width()/6);
 
+    for(unsigned int row = 0; row < computers.size(); row++)
+    {
+        Computer currentComputer = computers[row];
+
+        QString id = QString::number(currentComputer.getId());
+        QString name = QString::fromStdString(currentComputer.getName());
+        QString type = QString::fromStdString(currentComputer.getType());
+        QString yearbuilt = QString::number(currentComputer.getYearBuilt());
+        QString development = QString::fromStdString(currentComputer.getDevelopment());
+
+        ui->computer_table->setItem(row, 0, new QTableWidgetItem(id));
+        ui->computer_table->setItem(row, 1, new QTableWidgetItem(name));
+        ui->computer_table->setItem(row, 2, new QTableWidgetItem(type));
+        ui->computer_table->setItem(row, 3, new QTableWidgetItem(yearbuilt));
+        ui->computer_table->setItem(row, 4, new QTableWidgetItem(development));
+    }
+}
 void MainWindow::on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1)
 {
 
+}
 
+void MainWindow::on_search_box_computer_textChanged(const QString &arg1)
+{
+    string userInput = ui->search_box->text().toStdString();
+
+    vector<Computer> computers = _service.searchForComputers(userInput);
+    displayComputers(computers);
+}
+
+void MainWindow::on_button_add_computer_clicked()
+{
+    addComputerDialog AddComputerDialog;
+    int addComputerReturnValue = AddComputerDialog.exec();
+}
+
+void MainWindow::on_button_info_computer_clicked()
+{
+   addComputerDialog computerInfoDialog;
+
+   int computerInfoReturnValue = computerInfoDialog.exec();
 }

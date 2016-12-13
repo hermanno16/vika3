@@ -35,10 +35,18 @@ private slots:
 
     void on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1);
 
+    void on_search_box_computer_textChanged(const QString &arg1);
+
+    void on_button_add_computer_clicked();
+
+    void on_button_info_computer_clicked();
+
 private:
 
     void displayAllScientists();
     void displayScientists(vector<Scientist> scientists);
+    void displayAllComputers();
+    void displayComputers(vector<Computer>);
 
     Ui::MainWindow *ui;
     Service _service;
