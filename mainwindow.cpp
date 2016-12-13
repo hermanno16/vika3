@@ -3,6 +3,7 @@
 #include <string>
 #include <QString>
 #include "addscientistdialog.h"
+#include "scientistinfodialog.h"
 
 using namespace std;
 
@@ -59,7 +60,10 @@ void MainWindow::displayScientists(vector<Scientist> scientists)
         ui->scientist_table->setItem(row, 4, new QTableWidgetItem(yearofdeath));
     }
 }
-
+void MainWindow::on_row_clicked()
+{
+    //TODO -- klikka á nafn á listanum, fá upp infoið
+}
 void MainWindow::on_search_box_textChanged()
 {
     string userInput = ui->search_box->text().toStdString();
@@ -82,7 +86,12 @@ void MainWindow::on_button_add_scientist_clicked()
 
    int addScientistReturnValue = addScientistDialog.exec();
 }
+void MainWindow::on_button_scientist_info_clicked()
+{
+   ScientistInfoDialog scientistInfoDialog;
 
+   int scientistInfoReturnValue = scientistInfoDialog.exec();
+}
 void MainWindow::on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1)
 {
 

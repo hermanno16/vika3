@@ -114,6 +114,36 @@ vector<Scientist> DataAccess::searchForScientists(string searchString)
 
     return allScientists;
 }
+/*
+Scientist DataAccess::searchForScientistID(int searchID)
+{
+    Scientist oneScientist;
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM Scientists WHERE ID = (:id)");
+    query.bindValue(":id", searchID);
+    query.exec();
+
+    while(query.next())
+    {
+        int id = query.value(query.record().indexOf("ID")).toUInt();
+        QString name = query.value(query.record().indexOf("FirstName")).toString();
+        QString gender = query.value(query.record().indexOf("Gender")).toString();
+        int YearOfBirth = query.value(query.record().indexOf("YearOfBirth")).toUInt();
+        QString yearOfDeath = query.value(query.record().indexOf("YearOfDeath")).toString();
+
+        Scientist newScientist(
+                    id,
+                    name.toStdString(),
+                    gender.toStdString(),
+                    YearOfBirth,
+                    yearOfDeath.toStdString()
+                    );
+        oneScientist = newScientist;
+    }
+
+    return oneScientist;
+}*/
 
 //Scientist - other functions.
 void DataAccess::removeScientistFromDatabase(int idOfScientist)

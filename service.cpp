@@ -80,7 +80,16 @@ vector<Scientist> Service::searchForScientists(string searchString)
 
     return allScientists;
 }
+/*
+Scientist Service::searchForScientistID(int searchID)
+{
+    Scientist aScientist;
 
+    aScientist = _dAccess.searchForScientistID(searchID);
+
+    return aScientist;
+}
+*/
 vector<Scientist> Service::getScientistsByGenderAtoZ(char gender)
 {
     vector<Scientist> genderScientists;

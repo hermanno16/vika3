@@ -30,6 +30,7 @@ public:
     vector<Scientist> getScientistsByGenderAtoZ(char gender);
     vector<Scientist> getAllDeceasedScientistsAtoZ();
     string getScientistName(int idNumber);
+    Scientist searchForScientistID(int searchID);
     //Scientist - other functions.
     void removeScientistFromDataBase(int idOfScientist);
     //--Computer--//

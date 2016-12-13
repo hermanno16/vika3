@@ -39,7 +39,7 @@ public:
     vector<Scientist> getAllDeceasedScientistsAtoZ();
     //--Scientist search functions
     vector<Scientist> searchForScientists(string searchString);
-
+    //Scientist searchForScientistID(int searchID);
     //--Scientist other functions
     void addScientistToDataBase(string inputName, string inputGender, string inputYearOfBirth, string inputYearOfDeath);
     void removeScientistFromDatabase(int idOfScientist);

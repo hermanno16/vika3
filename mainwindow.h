@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 #include "scientist.h"
 #include "service.h"
-#include "addscientistwindow.h"
+//#include "addscientistwindow.h"
 #include "computer.h"
 
 #include <QMainWindow>
@@ -23,11 +23,15 @@ public:
     ~MainWindow();
 
 private slots:
+    void on_row_clicked();
+
     void on_search_box_textChanged();
 
     void on_pushButton_clicked();
 
     void on_button_add_scientist_clicked();
+
+    void on_button_scientist_info_clicked();
 
     void on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1);
 
