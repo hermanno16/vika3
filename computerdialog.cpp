@@ -1,5 +1,9 @@
 #include "computerdialog.h"
 #include "ui_computerdialog.h"
+#include <string>
+#include <QString>
+#include "addcomputerdialog.h"
+
 
 using namespace std;
 
@@ -11,8 +15,9 @@ ComputerDialog::ComputerDialog(QWidget *parent) :
 
     displayAllComputers();
 
-    ui->dropdown_what_to_look_at->addItem(" Scientists");
     ui->dropdown_what_to_look_at->addItem(" Computers");
+    ui->dropdown_what_to_look_at->addItem(" Scientists");
+
 }
 
 ComputerDialog::~ComputerDialog()
@@ -73,9 +78,9 @@ void ComputerDialog::on_pushButton_clicked()
 }
 void ComputerDialog::on_button_add_computer_clicked()
 {
-  // AddComputerDialog addCompueterDialog;
-
-  // int addComputerReturnValue = addComputerDialog.exec();
+    //AddComputerDialog addComputerDialog;
+    addComputerDialog AddComputerDialog;
+    int addComputerReturnValue = AddComputerDialog.exec();
 }
 void ComputerDialog::on_button_computer_info_clicked()
 {
