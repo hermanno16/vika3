@@ -259,30 +259,6 @@ vector<Computer> Service::searchForComputers(string searchString)
 
 }
 
-vector<Computer> Service::searchForComputersByName(string inputName)
-{
-    vector<Computer> allComputers;
-
-    allComputers = _dAccess.searchForComputersByName(inputName);
-
-    return allComputers;
-}
-vector<Computer> Service::searchForComputersByYearBuilt(string yearBuiltToFind)
-{
-    vector<Computer> allComputers;
-
-    allComputers = _dAccess.searchForComputersByYearBuilt(yearBuiltToFind);
-
-    return allComputers;
-}
-vector<Computer> Service::searchForComputersByType(string typeToFind)
-{
-    vector<Computer> allComputers;
-
-    allComputers = _dAccess.searchForComputersByType(typeToFind);
-
-    return allComputers;
-}
 string Service::getComputerName(int idNumber)
 {
     string aComputer;

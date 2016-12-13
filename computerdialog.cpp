@@ -1,12 +1,15 @@
 #include "computerdialog.h"
 #include "ui_computerdialog.h"
 
+using namespace std;
+
 ComputerDialog::ComputerDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ComputerDialog)
 {
     ui->setupUi(this);
 
+    displayAllComputers();
 
     ui->dropdown_what_to_look_at->addItem(" Scientists");
     ui->dropdown_what_to_look_at->addItem(" Computers");
