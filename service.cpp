@@ -206,12 +206,12 @@ vector<Computer> Service::getAllTypesComputersAtoZ(char type)
         }
         return typeComputer;
     }
-        else
-        {
-            cout << "  > invalid input!" << endl;
-            return tempVectorComputer;
-        }
+    else
+    {
+        cout << "  > invalid input!" << endl;
+        return tempVectorComputer;
     }
+}
 vector<Computer> Service::getAllBuildYearComputers(string yearBuilt)
 {
     vector<Computer> yearBuiltComputer;
@@ -248,6 +248,17 @@ vector<Computer> Service::getAllDevelopmentAndOriginalComputers(string developme
     return developmentComputer;
 }
 //--Computer Search Functions
+vector<Computer> Service::searchForComputers(string searchString)
+{
+
+    vector<Computer> allComputers;
+
+    allComputers = _dAccess.searchForComputers(searchString);
+
+    return allComputers;
+
+}
+
 vector<Computer> Service::searchForComputersByName(string inputName)
 {
     vector<Computer> allComputers;
@@ -328,7 +339,7 @@ bool Service::isAddScientistValid(string name, string gender, string yearOfBirth
     {
         for(unsigned int i = 0; i < gender.size(); i++)
         {
-           gender.at(i) = tolower(gender.at(i));
+            gender.at(i) = tolower(gender.at(i));
         }
 
         if(gender == "male" || gender == "female")
@@ -353,60 +364,60 @@ bool Service::isAddScientistValid(string name, string gender, string yearOfBirth
 
 void Service::fixInputNameScientist(string& inputName)
 {
-        inputName = inputName.substr(0,40);
+    inputName = inputName.substr(0,40);
 
-        inputName.at(0) = toupper(inputName.at(0));
+    inputName.at(0) = toupper(inputName.at(0));
 
-        for(unsigned int i = 1; i < inputName.size(); i++)
+    for(unsigned int i = 1; i < inputName.size(); i++)
+    {
+        if (inputName.at(i - 1) == ' ')
         {
-            if (inputName.at(i - 1) == ' ')
-            {
-                inputName.at(i) = toupper(inputName.at(i));
-            }
-            else
-            {
-                inputName.at(i) = tolower(inputName.at(i));
-            }
+            inputName.at(i) = toupper(inputName.at(i));
         }
+        else
+        {
+            inputName.at(i) = tolower(inputName.at(i));
+        }
+    }
 }
 void Service::fixInputGenderScientist(string& inputGender)
 {
-        //Max size of input is 6, if string is longer,the rest will be cut off.
-        inputGender = inputGender.substr(0,6);
-        //First letter to upper case.
-        inputGender.at(0) = toupper(inputGender.at(0));
-        //Rest of the letters to lower case.
-        for(unsigned int i = 1; i < inputGender.size(); i++)
-        {
-            inputGender.at(i) = tolower(inputGender.at(i));
+    //Max size of input is 6, if string is longer,the rest will be cut off.
+    inputGender = inputGender.substr(0,6);
+    //First letter to upper case.
+    inputGender.at(0) = toupper(inputGender.at(0));
+    //Rest of the letters to lower case.
+    for(unsigned int i = 1; i < inputGender.size(); i++)
+    {
+        inputGender.at(i) = tolower(inputGender.at(i));
 
-        }
+    }
 }
 void Service::fixInputTypeComputer(string& inputType)
 {
-        inputType = inputType.substr(0,21);
+    inputType = inputType.substr(0,21);
 
-        inputType.at(0) = toupper(inputType.at(0));
+    inputType.at(0) = toupper(inputType.at(0));
 
-        for(unsigned int i = 1; i < inputType.size(); i++)
-        {
-            inputType.at(i) = tolower(inputType.at(i));
+    for(unsigned int i = 1; i < inputType.size(); i++)
+    {
+        inputType.at(i) = tolower(inputType.at(i));
 
-        }
+    }
 
 }
 void Service::fixInputDevelopmentComputer(string& inputDevelopment)
 {
 
-        inputDevelopment = inputDevelopment.substr(0,9);
+    inputDevelopment = inputDevelopment.substr(0,9);
 
-        inputDevelopment.at(0) = toupper(inputDevelopment.at(0));
+    inputDevelopment.at(0) = toupper(inputDevelopment.at(0));
 
-        for(unsigned int i = 1; i < inputDevelopment.size(); i++)
-        {
-            inputDevelopment.at(i) = tolower(inputDevelopment.at(i));
+    for(unsigned int i = 1; i < inputDevelopment.size(); i++)
+    {
+        inputDevelopment.at(i) = tolower(inputDevelopment.at(i));
 
-        }
+    }
 }
 bool Service::isAddComputerValid(string name, string yearBuilt, string type, string development)
 {
@@ -423,7 +434,7 @@ bool Service::isAddComputerValid(string name, string yearBuilt, string type, str
 
     if(name.length() > 0)
     {
-       checkName = true;
+        checkName = true;
     }
 
     if(atoi(yearBuilt.c_str()) <= YEARTODAY && atoi(yearBuilt.c_str()) > 0)
@@ -432,11 +443,11 @@ bool Service::isAddComputerValid(string name, string yearBuilt, string type, str
     }
 
     if(type.length() > 6)
-    {   
+    {
         //Switch to lower case to check if input matches the correct string.
         for(unsigned int i = 0; i < type.size(); i++)
         {
-           type.at(i) = tolower(type.at(i));
+            type.at(i) = tolower(type.at(i));
         }
 
         if(type == "electronic" || type == "mechanical" || type == "electronic/mechanical" || type == "transistor" || type == "microcomputer" || type == "ternary")
@@ -449,7 +460,7 @@ bool Service::isAddComputerValid(string name, string yearBuilt, string type, str
     {
         for(unsigned int i = 0; i < development.size(); i++)
         {
-           development.at(i) = tolower(development.at(i));
+            development.at(i) = tolower(development.at(i));
         }
 
         if(development == "developed" || development == "original")

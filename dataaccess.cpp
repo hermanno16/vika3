@@ -354,6 +354,43 @@ vector<Computer> DataAccess::getAllComputersDevelopedAndOriginal()
     return getAllComputerInfoFromDataBase("SELECT * FROM Computers ORDER BY Development Asc");
 }
 //Computers - search functions
+vector<Computer> DataAccess::searchForComputers(string searchString)
+{
+    QString qSearchString = QString::fromStdString(searchString);
+
+    vector<Computer> allComputers;
+
+    allComputers.clear();
+
+    QSqlQuery query;
+    query.prepare("SELECT * FROM Computers WHERE (ComputersName) LIKE '%"+qSearchString+"%' "
+                  "or (Type) LIKE '%"+qSearchString+"%' "
+                  "or (YearBuilt) LIKE '%"+qSearchString+"%' "
+                  "or (Development) LIKE '%"+qSearchString+"%' ");
+    query.exec();
+
+    while(query.next())
+    {
+        int id = query.value(query.record().indexOf("Cid")).toUInt();
+        QString name = query.value(query.record().indexOf("ComputerName")).toString();
+        QString type = query.value(query.record().indexOf("Type")).toString();
+        int yearBuilt = query.value(query.record().indexOf("YearBuilt")).toUInt();
+        QString development = query.value(query.record().indexOf("Development")).toString();
+
+        Computer newComputer(
+                    id,
+                    name.toStdString(),
+                    type.toStdString(),
+                    yearBuilt,
+                    development.toStdString()
+                    );
+
+        allComputers.push_back(newComputer);
+    }
+
+    return allComputers;
+}
+
 vector<Computer> DataAccess::searchForComputersByName(string inputName)
 {
     QString qSearchString = QString::fromStdString(inputName);

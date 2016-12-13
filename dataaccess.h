@@ -65,6 +65,7 @@ public:
     vector<Computer> getAllComputersOriginal();
     vector<Computer> getAllComputersDevelopedAndOriginal();
     //--Computer search functions
+    vector<Computer> searchForComputers(string searchstring);
     vector<Computer> searchForComputersByName(string inputName);
     vector<Computer> searchForComputersByYearBuilt(string yearBuiltToFind);
     vector<Computer> searchForComputersByType(string typeToFind);
