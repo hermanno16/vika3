@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\computer.o
+./release\dataaccess.o
+./release\scientist.o
+./release\service.o
+./release\addwindow.o
+./release\addscientistdialog.o
+./release\scientistinfodialog.o
+./release\moc_mainwindow.o
+./release\moc_addscientistdialog.o
+./release\moc_scientistinfodialog.o
+);

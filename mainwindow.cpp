@@ -88,7 +88,7 @@ void MainWindow::on_button_add_scientist_clicked()
 }
 void MainWindow::on_button_scientist_info_clicked()
 {
-   ScientistInfoDialog scientistInfoDialog;
+   AddScientistDialog scientistInfoDialog;
 
    int scientistInfoReturnValue = scientistInfoDialog.exec();
 }
