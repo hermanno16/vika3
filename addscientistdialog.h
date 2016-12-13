@@ -1,5 +1,6 @@
 #ifndef ADDSCIENTISTDIALOG_H
 #define ADDSCIENTISTDIALOG_H
+#include "service.h"
 
 #include <QDialog>
 
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::AddScientistDialog *ui;
+    Service _service;
 };
 
 #endif // ADDSCIENTISTDIALOG_H
