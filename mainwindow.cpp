@@ -3,6 +3,7 @@
 #include <string>
 #include <QString>
 #include "addscientistdialog.h"
+#include "scientistinfodialog.h"
 
 using namespace std;
 
@@ -87,11 +88,9 @@ void MainWindow::on_button_add_scientist_clicked()
 }
 void MainWindow::on_button_scientist_info_clicked()
 {
-   /*
-  AddScientistDialog addScientistDialog;
+    ScientistInfoDialog scientistInfoDialog;
 
-  int scientistInfoReturnValue = addScientistDialog.exec();
-    */
+    scientistInfoDialog.exec();
 }
 
 void MainWindow::on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1)
