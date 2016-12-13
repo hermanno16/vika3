@@ -88,10 +88,11 @@ void MainWindow::on_button_add_scientist_clicked()
 }
 void MainWindow::on_button_scientist_info_clicked()
 {
-   AddScientistDialog scientistInfoDialog;
+    ScientistInfoDialog scientistInfoDialog;
 
-   int scientistInfoReturnValue = scientistInfoDialog.exec();
+    scientistInfoDialog.exec();
 }
+
 void MainWindow::on_dropdown_what_to_look_at_currentTextChanged(const QString &arg1)
 {
 
