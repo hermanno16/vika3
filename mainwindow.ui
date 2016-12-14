@@ -24,13 +24,22 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>50</y>
+      <y>20</y>
       <width>771</width>
-      <height>581</height>
+      <height>551</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -54,9 +63,6 @@
       <property name="autoFillBackground">
        <bool>true</bool>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
       <property name="placeholderText">
        <string>Search....</string>
       </property>
@@ -70,14 +76,18 @@
      <widget class="QPushButton" name="button_scientist_info">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>500</y>
-        <width>151</width>
+        <x>240</x>
+        <y>460</y>
+        <width>71</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>Info</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/Infobox_info_icon.svg.png</normaloff>../icons/Infobox_info_icon.svg.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_add_new_scientist">
@@ -139,6 +149,12 @@
        <property name="text">
         <string>ID</string>
        </property>
+       <property name="font">
+        <font>
+         <family>Calibri</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
       </column>
       <column>
        <property name="text">
@@ -166,12 +182,50 @@
        <rect>
         <x>0</x>
         <y>460</y>
-        <width>151</width>
+        <width>71</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/Add.ico</normaloff>../icons/Add.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_scientist_edit">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>460</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/edit.png</normaloff>../icons/edit.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_scientist_remove">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>460</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/remove.ico</normaloff>../icons/remove.ico</iconset>
       </property>
      </widget>
     </widget>
@@ -200,6 +254,12 @@
         <width>751</width>
         <height>401</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
@@ -269,6 +329,12 @@
         <height>31</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
@@ -294,14 +360,18 @@
      <widget class="QPushButton" name="button_info_computer">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>500</y>
-        <width>151</width>
+        <x>240</x>
+        <y>460</y>
+        <width>71</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>Info</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/Infobox_info_icon.svg.png</normaloff>../icons/Infobox_info_icon.svg.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="button_add_computer">
@@ -309,12 +379,59 @@
        <rect>
         <x>0</x>
         <y>460</y>
-        <width>151</width>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/Add.ico</normaloff>../icons/Add.ico</iconset>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_computer_edit">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>460</y>
+        <width>71</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/edit.png</normaloff>../icons/edit.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="button_computer_remove">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>460</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../icons/remove.ico</normaloff>../icons/remove.ico</iconset>
       </property>
      </widget>
     </widget>
