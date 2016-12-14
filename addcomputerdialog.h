@@ -1,12 +1,12 @@
 #ifndef ADDCOMPUTERDIALOG_H
 #define ADDCOMPUTERDIALOG_H
-
-#include <iostream>
+#include "service.h"
 #include <string>
 #include <QDialog>
 #include <QString>
-#include <QStringList>
-#include <QRegularExpression>
+#include <QPixmap>
+#include <QFileDialog>
+#include <QFrame>
 
 
 using namespace std;
@@ -29,6 +29,8 @@ public:
 private slots:
     void on_computer_Submit_Button_clicked();
 
+
+    void on_add_Photo_computer_Button_clicked();
 
 private:
     Ui::addComputerDialog *ui;
